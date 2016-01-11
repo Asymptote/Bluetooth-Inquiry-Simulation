@@ -23,6 +23,13 @@ def run():
 		#print("X:" + X)
 		#---------------------------
 
+		'''if(N == 0):
+			if (X != clk_16_12):
+				print(str(X))
+				print(str(clk_16_12))
+				print('Assertion!!!! X and clk_16_12 not same when N = 0')
+		'''
+
 		# 0000 1001 1110 1000 
 		#address = [ 4-LSBs-of-DCI(0x00), GIAC LAP (0x9E8B33)]
 		addressStr = '09E8B33'
@@ -42,7 +49,7 @@ def run():
 		Y2 = '0'
 
 
-		add_1 = '{0:05b}'.format(op.bin2dec(A) + op.bin2dec(X))
+		add_1 = '{0:05b}'.format((op.bin2dec(A) + op.bin2dec(X))%32)
 		xor_1 = '{0:05b}'.format(op.bin2dec(add_1) ^ op.bin2dec(B))
 		xor_2 = '{0:05b}'.format(op.bin2dec(C) ^ op.bin2dec(Y1))
 		perm_1 = op.perm5(xor_1, xor_2, D)

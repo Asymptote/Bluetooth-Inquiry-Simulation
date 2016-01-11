@@ -23,8 +23,12 @@ for f in freqSeq:
 for element in d.keys():
     if d[element] > 16:
         print("<"+element +">: "+ str(d[element]))
+    if d[element] < 16:
+        print("<"+element +">: "+ str(d[element]))
 
 print("Slave testing finished")
 
 
 #Master testing
+#print("Running Master")
+#arr = master.run()
