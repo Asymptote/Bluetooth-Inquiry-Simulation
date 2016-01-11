@@ -3,7 +3,7 @@ import Operations as op
 def run():
 	clk = 0
 	arr = []
-	for clk in range(4096 * 512):
+	for clk in range(4096 * 32):
 
 		clk_bits = op.dec2bin(clk, 32) # change clock to 32 bits 
 		N = 123 # counter which is incremented after each FHS packet transmission
